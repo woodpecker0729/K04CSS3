@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul > li {
+            font-size: 20px; font-weight: normal;
+            color: green; width: 400px;
+        }
+        .menu > li:hover {
+            color:red; font-weight: bold;
+        }
+        .menu > li:active {
+            color: yellow; background-color: black;
+        }
+        input:focus {
+            border:4px red dotted; background-color: blue;
+        }
+        input:enabled {
+            color: red; font-weight: bold;
+        }
+        input:disabled{
+            color: blue; background-color: aqua;
+            border:1px gray solid;
+        }
+        ul.link li{list-style-type: none;}
+        ul.link a::after{
+            content: '-(웹주소)' attr(href);
+        }
+        ul.notClass li:not(.odd){
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>반응선택자</h2>
+    <div id="content">
+        <ul class="menu">
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+            <li>메뉴4</li>
+            <li>메뉴5</li>
+            <li>메뉴6</li>
+        </ul>
+    </div>
+    <h2>상태선택자</h2> 
+    <div>
+        <form action="">
+            이름:<input type="text" name="name" /> <br>
+            아이디:<input type="text" name="id" /> <br>
+            패스워드:<input type="text" name="pwd" value="1234" disabled />
+        </form>
+    </div>
+
+    <h2>after선택자</h2>
+    <div>
+        <ul class="link">
+            <li><a href="http://naver.com">네이버</a></li>
+            <li><a href="http://nate.com">네이트</a></li>
+            <li><a href="http://daum.net">다음</a></li>
+            <li><a href="http://google.com">구글</a></li>
+            <li><a href="http://ikosmo.co.kr">코스모</a></li>
+            <li><a href="http://yahoo.com">야후</a></li>
+        </ul>
+    </div>
+    <h2>부정선택자</h2>
+    <div>
+        <ul class="notClass">
+            <li class="odd"><a href="#"></a>네이버</li>
+            <li><a href="#"></a>네이트</li>
+            
+            <li class="odd">><a href="#">다음</a></li>
+            <li><a href="#"></a>구글</li>;
+        </ul>
+    </div>
+</body>
+</html>

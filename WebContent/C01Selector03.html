@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content{
+            width:300px; background-color: yellow;
+        }
+        ul li {
+            list-style:none; border:1px solid green;
+            font-size:24px; font-weight:bold; height:50px;
+        }
+        div#content ul li:nth-child(2n+1){
+            background-color: #820F6B;
+        }
+        div#content ul li:nth-child(2n){
+            background-color: skyblue;
+        }
+        div#content ul li:first-child{
+            background-color: red; color:#ffffff;
+        }
+        div#content ul li:last-child{
+            background-color: blue; color:#ffffff;
+        }
+        li:nth-child(2){
+            color:red;
+        }
+        #start::first-letter, #end::first-letter{
+            font-size: 30px;
+        }
+        #start::first-line, #end::first-line{
+            color:red; font-weight: bold;
+        }
+        #character p:first-child::selection{
+            color: yellow; background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2>구조선택자</h2>
+    <div id="content">
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+            <li>메뉴4</li>
+            <li>메뉴5</li>
+            <li>메뉴6</li>
+        </ul>
+    </div>
+   <h2> 문자선택자 </h2>
+    <div id="character">
+        <p id="start">
+            강의시작 날짜 <br>19년 4월 10일
+        </p>
+        <p id=end> 
+            강의종료날짜 <br/>19년 10월 15일
+        </p>
+    </div>
+    <div>
+    <ul>
+    <li>메뉴1</li>
+    <li>메뉴2</li>
+    <li>메뉴3</li>
+    <li>메뉴4</li>
+    <li>메뉴5</li>
+    </ul>
+    </div>
+</body>
