@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style> 
+    .div1{background-color: red;}
+    
+    .div2{background-color: green;}
+    
+    .div3{background-color: blue;}</style>
+<body>
+    <h2>float</h2>
+    <fieldset>
+        
+        <div class="div1" style="float:left">div1</div>
+        <div class="div2" style="float:left">div2</div>
+        <div class="div3">div3</div>
+    </fieldset>
+    <h2>float</h2>
+    <fieldset>
+       
+        <div class="div1" style="float:left; width:100px;" >div1</div>
+        <div class="div2" style="float:left; width:100px;">div2</div>
+        <div class="div3" style="float:right; width:100px;">div3</div>
+    </fieldset>
+    <h2>float</h2>
+    <fieldset>
+        <div>
+            <div class="div1" style="float:left; width:100px; height: 100px;" >div1</div>
+            <div class="div2" style="float:left; width:100px; height: 100px;">div2</div>
+        </div>
+        <div style="clear:both"></div>
+        <div class="div3" style="width: 250px;height: 120px;">div3</div>
+    </fieldset>
+    <h2>position 속성</h2>
+    <!-- 
+        부모 엘리먼트 위치를 기준으로 좌측에서 30, 
+        상단에서 10만큼 간격이 떨어진다.
+    -->
+    <fieldset style="position: relative">
+        <legend>position:relative</legend>
+        <div class="div1" style="position: relative; left: 30px; top: 10px; width: 100px; height: 100px;">relative</div>
+    </fieldset>
+    <!-- 
+        부모 엘리먼트를 기준으로 간격이 떨어지는 것은 동일하나
+        기준 위치가 relative 와는 다르다.
+     -->
+    <fieldset style="position: absolute">
+        <legend>position:absolute</legend>
+        <div class="div1" style="position: absolute; left: 40px; top: 30px; width: 100px; height: 100px;">absolute</div>
+    </fieldset>
+    <p style="height: 200px;"></p>
+
+    <!-- 
+        static 일 때는 위치값을 임의로 조정할 수 없다.
+        아래의 경우 모두 고정된 위치에 출력된다.
+     -->
+    <fieldset style="position: static;">
+        <legend>position:static</legend>
+        <div class="div1" style="position: static; 
+        left:0px; top: 0px; width: 50px; height: 50px;">Box(0,0)</div>
+        <div class="div2" style="position: static; 
+        left:50px; top: 0px; width: 50px; height: 50px;">Box(100,100)</div>
+        <!--  left, top 적용안됨 -->
+        <div class="div3" style="position: static; 
+        left:100px; top: 0px; width: 50px; height: 50px;">Box(100,100)</div>
+        <!--  left, top 적용안됨 -->
+
+    </fieldset>
+    <!-- 
+        앞서 배치된 엘리먼트의 위치의 상대위치를 지정하게 되어 box2의 경우 box1아래쪽에 배치된다.
+        그리고 엘리먼트끼리 겹쳐지는 경우는 발생하지 않는다.
+    -->
+    <fieldset style="position: relative;">
+        <legend>position:relative</legend>
+        <div class="div1" style="position: relative; 
+        left:0px; top: 0px; width: 50px; height: 50px;">Box(0,0)</div>
+        <div class="div2" style="position: relative; 
+        left:50px; top: 0px; width: 50px; height: 50px;">Box(50,0)</div>
+        <div class="div3" style="position: relative; 
+        left:100px; top: 0px; width: 50px; height: 50px;">Box(100,0)</div>
+    </fieldset>
+    <!-- 
+        엘리먼트가 absolute인 경우 부모 엘리먼트의
+        position 속성이 있는 경우
+            부모엘리먼트가 기준점이 된다.
+        position 속성이 없는 경우
+            웹브라우저의 좌측상단이 기준점이 된다.
+            따라서 원하는 어떤 위치에도 엘리먼트를 floating 시킬 수 있다
+     -->
+    <fieldset style="position: relative;">
+        <legend>position:absolute</legend>
+        <div class="div1" style="position: absolute; 
+        left:0px; top: 0px; width: 50px; height: 50px;">Box(0,0)</div>
+        <div class="div2" style="position: absolute; 
+        left:25px; top: 25px; width: 50px; height: 50px;">Box(25,25)</div>
+        <div class="div3" style="position: absolute; 
+        left:50px; top: 50px; width: 50px; height: 50px;">Box(50,50)</div>
+    </fieldset>
+</body>
+</html>

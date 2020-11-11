@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            font-size: 16pt;
+            color:white;
+            font-weight: bold;       
+        } 
+        table {
+            border-spacing: 6px;
+        }
+        table td{     
+            width: 100px;
+            height: 50px;
+            border-radius: 13px 13px 13px 13px;      
+            
+        }
+        td > button {
+            
+            width: 100%;
+            height: 100%;
+            border-radius: 15px 15px 15px 15px;
+            background-color:inherit;
+        }
+        .gray{
+            background-color: #7B7B7B;
+        }
+        .black{
+            background-color: #373737;
+        }
+        .yellow{
+            background-color: #FA960A;
+        }
+        .lcd{
+            height: 80px;
+            background-color: #70C738; 
+            color:#373737; 
+            font-size: 28pt;
+            text-align: right;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table style="background-color: #DDDDDD; ">
+        <tr >
+            <td colspan="4" class="lcd">123+654</td>
+        </tr>
+            
+        <tr class="gray">
+            <td colspan="2"><button type="button">BackSpace</button></td>
+            <td colspan="2"><button type="button">C</button></td>
+        </tr>
+        <tr class="black">
+            <td ><button type="button">1</button></td>
+            <td ><button type="button">2</button></td>
+            <td ><button type="button">3</button></td>
+            <td class="yellow"><button type="button">/</button></td>
+        </tr>
+        <tr class="black">
+            <td ><button type="button">4</button></td>
+            <td ><button type="button">5</button></td>
+            <td ><button type="button">6</button></td>
+            <td class="yellow"><button type="button">x</button></td>
+        </tr>
+        <tr class="black">
+            <td ><button type="button">7</button></td>
+            <td ><button type="button">8</button></td>
+            <td ><button type="button">9</button></td>
+            <td class="yellow"><button type="button">+</button></td>
+        </tr>
+        <tr class="black">
+            <td ><button type="button">=</button></td>
+            <td ><button type="button">0</button></td>
+            <td ><button type="button">.</button></td>
+            <td class="yellow"><button type="button">-</button></td>
+        </tr>
+    </table>
+</body>
+</html>
