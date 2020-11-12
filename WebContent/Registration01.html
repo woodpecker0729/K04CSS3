@@ -5,18 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        table {
+            width: 700px;
+            border-spacing: 0px;
+            border-bottom:1px solid #999999;
+            border-left: 1px solid #999999;
+        }
+        tr > td{
+            padding-left: 10px;
+            border:1px solid #999999;
+            border-bottom: 0px;
+            border-left: 0px;
+            background-color: #fff;
+            height: 30px;
+        }
         table tr > td:first-child{
             font-weight: bold;
-            background-color:  gray;
+            background-color:  #dddddd;
+            width: 100px;
+            padding-left: 20px;
+            font-size: 10pt;   
         } 
         .check {
-            background-color: #444444;
+            background-color: #333333;
             color:white;
             font-size: 8pt;
         }
         .gray {
             font-size: 9pt;
             color:darkgray;
+        }
+        .birth{
+            font-size : 9pt;
+        }
+        .year{
+            width:60px;  
+        }
+        .mmdd{
+            width:30px;
+        }
+        input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        .add{
+            width:95%
+        }
+        .add2{
+            width:80%
+        }
+        .address{
+            font-size : 9pt;
+        }
+        .notfirst{
+            background-color: #fff;
+        }
+        .nodisplay{
+            display: none;
         }
     </style>
 </head>
@@ -28,11 +73,11 @@
         </tr>
         <tr>
             <td>비밀번호</td>
-            <td><input type="text"></td>
+            <td><input type="password"></td>
         </tr>
         <tr>
             <td>비밀번호 확인</td>
-            <td class="gray"><input type="text"> &nbsp;&nbsp; (확인을 위해 다시 입력해 주세요)</td> 
+            <td ><input type="password"> <span class="gray"> &nbsp;&nbsp; (확인을 위해 다시 입력해 주세요)</span></td> 
         </tr>
         <tr>
             <td>이름</td>
@@ -40,45 +85,65 @@
         </tr>
         <tr>
             <td>생년월일</td>
-            <td><input type="radio">남자</button><input type="radio">여자</button></td>
+            <td class="birth"><input type="radio" name="gender" checked="">남자
+                <input type="radio" name="gender">여자
+                <input type="number" class="year">년
+                <input type="number" class="mmdd">월
+                <input type="number" class="mmdd">일
+                
+            </td>
         </tr>
         <tr>
-            <td rowspan="3">주소</td>
-            <td><button type="button" class="check">주소찾기</button><input type="text"></td>
+            <td rowspan="3" >주소</td>
+            <td><button type="button" class="check">주소찾기</button>&nbsp;<input type="text"></td>
         </tr>
         <tr>
-            <td></td>
+            <td class="nodisplay"></td>
+            <td><input type="text" class="add" readonly></td>
         </tr>
         <tr>
-            <td></td>
+            <td class="nodisplay"></td>
+            <td><input type="text" class="add2"> <span class="address">*나머지 주소</span></td>
         </tr>
         <tr>
-            <td>이메일</td>
-            <td></td>
+            <td rowspan="2">이메일</td>
+            <td><input type="text">&nbsp;@&nbsp;<input type="text"></td>
+        </tr>
+        <tr>
+            <td class="nodisplay"></td>
+            <td><span class="gray">hanmail.net은 메일 수신이 어려울 수 있으니 가급적 다른 메일을 이용하시기 바랍니다.</span></td>
         </tr>
         <tr>
             <td>휴대폰번호</td>
-            <td></td>
+            <td><input type="text">-<input type="text">-<input type="text"></td>
         </tr>
         <tr>
             <td>전화번호</td>
-            <td></td>
+            <td><input type="text">-<input type="text">-<input type="text"></td>
         </tr>
         <tr>
-            <td>출판계약일</td>
-            <td></td>
+            <td>관심분야</td>
+            <td><select id="interests">
+                <option >선택</option>
+                <option value="정치">정치</obtion>
+                <option value="경제">경제</obtion>
+                <option value="연예">연예</obtion>
+                <option value="음악">음악</obtion>
+                <option value="스포츠">스포츠</obtion>
+                <option value="기타">기타</obtion>   
+            </select></td>
         </tr>
         <tr>
-            <td>출판종료일</td>
-            <td></td>
+            <td>가입경로</td>
+            <td><select id="subpath">
+                <option >선택</option>
+                <option value="지인추천">지인추천</obtion>
+                <option value="인터넷검색">인터넷검색</obtion>
+                <option value="광고">광고</obtion>
+                <option value="기타">기타</obtion>
+            </select></td>
         </tr>
-        
-        <tr>
-            <td>선택정보</td>
-            <td></td>
-        </tr>
-        
-       
+ 
     </table>
 </body>
 </html>
