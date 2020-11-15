@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    var number = Math.floor(Math.random()*99)+1;
+    
+    
+    
+    function updowngame(){
+        var cnt = parseInt(document.getElementById("count").innerHTML);
+        cnt++;
+        var usernum = document.getElementById("usernum").value;
+        if(usernum<=100&&usernum>=1){
+        if(usernum>number) document.getElementById("img").src="images/down.jpg";
+        else if(usernum<number) document.getElementById("img").src="images/up.jpg";
+        else if(usernum=number) document.getElementById("img").src="images/answer.jpeg";
+        }
+        else{
+            document.getElementById("img").src="images/error.jpeg";
+            alert("1~100사이의 정수를 입력하세요.");
+        }
+        document.getElementById("count").innerHTML = cnt;
+    }
+</script>
+</head>
+<body>
+    <h2>업다운게임</h2>
+    <h3>1~100사이의 숫자를 입력하세요</h3>
+    
+    <h4>시도횟수 :&nbsp;<span id="count" style="font-size: 20pt;">0</span>회</h4>
+    
+    <h4>숫자입력 :&nbsp;
+        <input type="number" id="usernum" style="width: 50px;">
+        <button onclick="updowngame();">확인</button>
+    </h4>
+    <img src="images/updowngame.jpg" id="img"alt="">;
+</body>
+</html>
